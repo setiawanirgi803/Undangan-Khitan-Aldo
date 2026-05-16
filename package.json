@@ -1,0 +1,12 @@
+{
+  "name": "personal-profile-irgi",
+  "version": "1.0.0",
+  "description": "Professional Personal Profile for Irgi Setiawan",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx -y serve -l 3000 ."
+  },
+  "keywords": [],
+  "author": "Antigravity AI",
+  "license": "MIT"
+}
