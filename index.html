@@ -26,7 +26,7 @@
     <svg id="music-icon-on" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
     <svg id="music-icon-off" class="hidden" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
   </button>
-  <button class="float-btn settings-btn" title="Pengaturan" onclick="openAdmin()">
+  <button id="settings-btn" class="float-btn settings-btn hidden" title="Pengaturan" onclick="openAdmin()">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
   </button>
 </div>
@@ -289,6 +289,7 @@
       <button class="atab" onclick="switchTab('tab-bank',this)">Rekening</button>
       <button class="atab" onclick="switchTab('tab-photo',this)">Foto</button>
       <button class="atab" onclick="switchTab('tab-guest',this)">Tamu</button>
+      <button class="atab" onclick="switchTab('tab-export',this)">📤 Ekspor</button>
     </div>
 
     <!-- Tab: Child -->
@@ -342,6 +343,21 @@
           <button onclick="copyGuestLink()">Salin</button>
         </div>
       </div>
+    </div>
+
+    <!-- Tab: Export Configuration -->
+    <div id="tab-export" class="admin-tab-content">
+      <p class="guest-desc" style="margin-bottom:1rem;">Simpan konfigurasi final ke source code agar terlihat oleh semua pengunjung:</p>
+      <button class="btn-gen" onclick="exportConfig()" style="margin-bottom: 1.5rem; background: var(--gold); color: var(--em3); font-weight:700;">📥 Download File main.js Baru</button>
+      
+      <div class="ag">
+        <label>Atau salin kode objek DEFAULT di bawah ini:</label>
+        <textarea id="export-code-output" rows="10" readonly style="font-family: monospace; font-size: 0.85rem; width: 100%; box-sizing: border-box; background: #fafafa; border: 1px solid rgba(15,76,58,0.12); border-radius: 8px; padding: 0.85rem; outline: none;"></textarea>
+      </div>
+      <button class="btn-gen" onclick="copyExportCode()" style="margin-top: 0.5rem;">📋 Salin Kode DEFAULT</button>
+      <small style="color:var(--muted);font-size:.78rem;display:block;margin-top:0.8rem;line-height:1.4;">
+        * Setelah men-download <b>main.js</b>, ganti file <code>main.js</code> lama di folder project Anda dengan file baru ini, lalu commit &amp; push ke GitHub agar otomatis terupdate di Vercel/GitHub Pages.
+      </small>
     </div>
 
     <div class="admin-actions">

@@ -584,6 +584,7 @@ function openAdmin() {
   const photoUrl = document.getElementById('a-photo-url');
   if (photoUrl) photoUrl.value = d.photoSrc || '';
 
+  populateExportCode();
   document.getElementById('admin-overlay').classList.remove('hidden');
 }
 
@@ -625,6 +626,7 @@ function saveAdminData() {
 
   saveData(d);
   renderPage();
+  populateExportCode();
 
   // If music URL changed, reload audio immediately
   const newMusicUrl = d.musicUrl || '';
@@ -694,9 +696,68 @@ function copyGuestLink() {
 }
 
 // =============================================
+// EXPORT CONFIGURATION
+// =============================================
+function populateExportCode() {
+  const currentData = getData();
+  const textarea = document.getElementById('export-code-output');
+  if (textarea) {
+    textarea.value = `const DEFAULT = ${JSON.stringify(currentData, null, 2)};`;
+  }
+}
+
+function exportConfig() {
+  const currentData = getData();
+  fetch('main.js')
+    .then(r => r.text())
+    .then(text => {
+      const defaultRegex = /const DEFAULT = \{[\s\S]*?\};/;
+      const newDefaultStr = `const DEFAULT = ${JSON.stringify(currentData, null, 2)};`;
+      const newText = text.replace(defaultRegex, newDefaultStr);
+      
+      const blob = new Blob([newText], { type: 'application/javascript' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'main.js';
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('✓ main.js berhasil di-download! Ganti file lama Anda.');
+    })
+    .catch(e => {
+      console.error(e);
+      showToast('Gagal memuat main.js untuk diekspor.');
+    });
+}
+
+function copyExportCode() {
+  const val = document.getElementById('export-code-output').value;
+  if (!val) return;
+  navigator.clipboard ? navigator.clipboard.writeText(val).then(() => showToast('✓ Kode DEFAULT berhasil disalin!')) : (() => {
+    document.getElementById('export-code-output').select();
+    document.execCommand('copy');
+    showToast('✓ Kode DEFAULT berhasil disalin!');
+  })();
+}
+
+function checkAdminAccess() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const isAdmin = urlParams.has('admin');
+  const settingsBtn = document.getElementById('settings-btn');
+  if (settingsBtn) {
+    if (isAdmin) {
+      settingsBtn.classList.remove('hidden');
+    } else {
+      settingsBtn.classList.add('hidden');
+    }
+  }
+}
+
+// =============================================
 // INIT
 // =============================================
 document.addEventListener('DOMContentLoaded', () => {
   renderPage();
   renderWishes();
+  checkAdminAccess();
 });
