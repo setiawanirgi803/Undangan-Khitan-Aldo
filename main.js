@@ -2,10 +2,10 @@
 // DEFAULT DATA
 // =============================================
 const DEFAULT = {
-  "fullname": "Andi Richardo Kaka",
+  "fullname": "Andi Richardo",
   "nick": "ALDO",
   "order": "Anak ke-2 dari 2 bersaudara",
-  "father": "Andi Untung Selamet",
+  "father": "Andi Untung ( Toenk )",
   "mother": "Yayah Rohaya",
   "sibling": "Andi Shevchenko",
   "dateDisplay": "Sabtu, 4 Juli 2026",
