@@ -1,402 +1,530 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Walimatul Khitan - Aldo</title>
-    <meta name="description" content="Undangan Digital Resepsi Syukuran Khitan Andi Richardo Kaka (Aldo)">
 
-    <!-- Open Graph (OG) & Twitter Card Metadata -->
-    <!-- PENTING: og:image WAJIB menggunakan URL absolut (https://...) agar muncul di WhatsApp/Facebook -->
-    <!-- Ganti URL di bawah ini dengan URL Vercel Anda yang sebenarnya jika berbeda -->
-    <meta property="og:title" content="Walimatul Khitan - Aldo">
-    <meta property="og:description" content="Undangan Digital Resepsi Syukuran Khitan Andi Richardo Kaka (Aldo). Sabtu, 4 Juli 2026 - Aula Kantor RW 12, Penjaringan Jakarta Utara">
-    <meta property="og:image" content="https://undangan-khitan-aldo.vercel.app/images/og_cover.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:url" content="https://undangan-khitan-aldo.vercel.app/">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Walimatul Khitan Aldo">
-    <meta property="og:locale" content="id_ID">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Walimatul Khitan - Aldo">
-    <meta name="twitter:description" content="Undangan Digital Resepsi Syukuran Khitan Andi Richardo Kaka (Aldo). Sabtu, 4 Juli 2026 - Penjaringan, Jakarta Utara">
-    <meta name="twitter:image" content="https://undangan-khitan-aldo.vercel.app/images/og_cover.png">
-    <script>
-      // Script ini HANYA untuk personalisasi judul halaman bagi tamu undangan
-      // Scraper sosmed (WA, FB, Telegram) tidak menjalankan JS — meta OG di atas sudah menggunakan URL absolut statis
-      (function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const guestName = urlParams.get('to');
-        if (guestName) {
-          const baseTitle = "Walimatul Khitan - Aldo";
-          document.title = baseTitle + " \u2714 Untuk " + decodeURIComponent(guestName);
-        }
-      })();
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <style>
-      #cover-screen{position:fixed;top:0;left:0;width:100%;height:100%;background-color:#062318;display:flex;flex-direction:column;justify-content:center;align-items:center;z-index:9999;color:#FAFAFA;text-align:center;padding:2rem;transition:transform 1.3s cubic-bezier(0.77,0,0.175,1),opacity 1.3s ease;overflow:hidden;}
-      #cover-screen.opened{transform:translateY(-100%);opacity:0;pointer-events:none;}
-      body.scroll-locked{overflow:hidden;}
-    </style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Walimatul Khitan - Aldo</title>
+  <meta name="description" content="Undangan Digital Resepsi Syukuran Khitan Andi Richardo Kaka (Aldo)">
+
+  <!-- Open Graph (OG) & Twitter Card Metadata -->
+  <!-- PENTING: og:image WAJIB menggunakan URL absolut (https://...) agar muncul di WhatsApp/Facebook -->
+  <!-- Ganti URL di bawah ini dengan URL Vercel Anda yang sebenarnya jika berbeda -->
+  <meta property="og:title" content="Walimatul Khitan - Aldo">
+  <meta property="og:description"
+    content="Undangan Digital Resepsi Syukuran Khitan Andi Richardo Kaka (Aldo). Sabtu, 4 Juli 2026 - Aula Kantor RW 12, Penjaringan Jakarta Utara">
+  <meta property="og:image" content="https://undangan-khitan-aldo.vercel.app/images/og_cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:url" content="https://undangan-khitan-aldo.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Walimatul Khitan Aldo">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Walimatul Khitan - Aldo">
+  <meta name="twitter:description"
+    content="Undangan Digital Resepsi Syukuran Khitan Andi Richardo Kaka (Aldo). Sabtu, 4 Juli 2026 - Penjaringan, Jakarta Utara">
+  <meta name="twitter:image" content="https://undangan-khitan-aldo.vercel.app/images/og_cover.png">
+  <script>
+    // Script ini HANYA untuk personalisasi judul halaman bagi tamu undangan
+    // Scraper sosmed (WA, FB, Telegram) tidak menjalankan JS — meta OG di atas sudah menggunakan URL absolut statis
+    (function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const guestName = urlParams.get('to');
+      if (guestName) {
+        const baseTitle = "Walimatul Khitan - Aldo";
+        document.title = baseTitle + " \u2714 Untuk " + decodeURIComponent(guestName);
+      }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #cover-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #062318;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      color: #FAFAFA;
+      text-align: center;
+      padding: 2rem;
+      transition: transform 1.3s cubic-bezier(0.77, 0, 0.175, 1), opacity 1.3s ease;
+      overflow: hidden;
+    }
+
+    #cover-screen.opened {
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    body.scroll-locked {
+      overflow: hidden;
+    }
+  </style>
 </head>
+
 <body class="scroll-locked">
 
-<!-- Audio -->
-<audio id="bg-audio" loop preload="auto"></audio>
+  <!-- Audio -->
+  <audio id="bg-audio" loop preload="auto"></audio>
 
-<!-- Floating Controls -->
-<div class="floating-controls">
-  <button id="music-btn" class="float-btn hidden" title="Musik" onclick="toggleMusic()">
-    <svg id="music-icon-on" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
-    <svg id="music-icon-off" class="hidden" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
-  </button>
-  <button id="settings-btn" class="float-btn settings-btn hidden" title="Pengaturan" onclick="openAdmin()">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-  </button>
-</div>
-
-<!-- COVER SCREEN -->
-<div id="cover-screen">
-  <div class="cover-particles" id="cover-particles"></div>
-  <div class="cover-ring-1"></div>
-  <div class="cover-ring-2"></div>
-  <div class="cover-inner">
-    <div class="corner-ornament top-left"></div>
-    <div class="corner-ornament top-right"></div>
-    <div class="corner-ornament bottom-left"></div>
-    <div class="corner-ornament bottom-right"></div>
-    
-    <div class="cover-star-icon">
-      <svg width="52" height="52" viewBox="0 0 100 100" fill="none"><path d="M50 5L58.5 35L88.5 26.5L65 50L88.5 73.5L58.5 65L50 95L41.5 65L11.5 73.5L35 50L11.5 26.5L41.5 35L50 5Z" stroke="#D4AF37" stroke-width="2.5" stroke-linejoin="round"/><circle cx="50" cy="50" r="10" stroke="#D4AF37" stroke-width="2"/></svg>
-    </div>
-    <span class="cover-eyebrow">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</span>
-    <span class="cover-tag">WALIMATUL KHITAN</span>
-    <h1 class="cover-name" id="cover-name-display">ALDO</h1>
-    <p class="cover-fullname" id="cover-fullname-display">Andi Richardo Kaka</p>
-    <div class="cover-line"></div>
-    <p class="cover-date-text" id="cover-date-display">Sabtu, 15 Agustus 2026</p>
-    <div class="cover-guest-box">
-      <span class="cover-guest-label">Kepada Yth. Bapak/Ibu/Saudara/i:</span>
-      <strong class="cover-guest-name" id="guest-name-display">Tamu Undangan</strong>
-    </div>
-    <button id="btn-open" class="btn-cover-open">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-      Buka Undangan
+  <!-- Floating Controls -->
+  <div class="floating-controls">
+    <button id="music-btn" class="float-btn hidden" title="Musik" onclick="toggleMusic()">
+      <svg id="music-icon-on" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+      </svg>
+      <svg id="music-icon-off" class="hidden" width="18" height="18" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+        <line x1="23" y1="9" x2="17" y2="15"></line>
+        <line x1="17" y1="9" x2="23" y2="15"></line>
+      </svg>
+    </button>
+    <button id="settings-btn" class="float-btn settings-btn hidden" title="Pengaturan" onclick="openAdmin()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="3"></circle>
+        <path
+          d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z">
+        </path>
+      </svg>
     </button>
   </div>
-</div>
 
-<!-- MAIN CONTENT -->
-<main id="main-content" class="content-hidden">
+  <!-- COVER SCREEN -->
+  <div id="cover-screen">
+    <div class="cover-particles" id="cover-particles"></div>
+    <div class="cover-ring-1"></div>
+    <div class="cover-ring-2"></div>
+    <div class="cover-inner">
+      <div class="corner-ornament top-left"></div>
+      <div class="corner-ornament top-right"></div>
+      <div class="corner-ornament bottom-left"></div>
+      <div class="corner-ornament bottom-right"></div>
 
-  <!-- SECTION: Opening -->
-  <section class="section-opening">
-    <div class="container narrow text-center">
-      <div class="opening-ornament">
-        <svg width="180" height="50" viewBox="0 0 300 60"><path d="M10 30 Q75 10, 150 30 T290 30" stroke="#D4AF37" stroke-width="1.5" fill="none" stroke-linecap="round"/><circle cx="150" cy="30" r="4" fill="#D4AF37"/><circle cx="80" cy="22" r="2.5" fill="#0F4C3A"/><circle cx="220" cy="22" r="2.5" fill="#0F4C3A"/></svg>
+      <div class="cover-star-icon">
+        <svg width="52" height="52" viewBox="0 0 100 100" fill="none">
+          <path
+            d="M50 5L58.5 35L88.5 26.5L65 50L88.5 73.5L58.5 65L50 95L41.5 65L11.5 73.5L35 50L11.5 26.5L41.5 35L50 5Z"
+            stroke="#D4AF37" stroke-width="2.5" stroke-linejoin="round" />
+          <circle cx="50" cy="50" r="10" stroke="#D4AF37" stroke-width="2" />
+        </svg>
       </div>
-      <p class="salam-text">Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
-      <p class="opening-body">Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara syukuran khitan putra kami:</p>
-      <div class="quote-card">
-        <div class="corner-ornament top-left"></div>
-        <div class="corner-ornament top-right"></div>
-        <div class="corner-ornament bottom-left"></div>
-        <div class="corner-ornament bottom-right"></div>
-        <span class="quote-mark">"</span>
-        <p class="quote-body">Rabbana hablana min azwajina wa dzurriyyatina qurrata a'yun, waj'alna lil muttaqina imama.</p>
-        <span class="quote-ref">QS. Al-Furqan: 74</span>
+      <span class="cover-eyebrow">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</span>
+      <span class="cover-tag">WALIMATUL KHITAN</span>
+      <h1 class="cover-name" id="cover-name-display">ALDO</h1>
+      <p class="cover-fullname" id="cover-fullname-display">Andi Richardo Kaka</p>
+      <div class="cover-line"></div>
+      <p class="cover-date-text" id="cover-date-display">Sabtu, 15 Agustus 2026</p>
+      <div class="cover-guest-box">
+        <span class="cover-guest-label">Kepada Yth. Bapak/Ibu/Saudara/i:</span>
+        <strong class="cover-guest-name" id="guest-name-display">Tamu Undangan</strong>
       </div>
+      <button id="btn-open" class="btn-cover-open">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        Buka Undangan
+      </button>
     </div>
-  </section>
-
-  <!-- Divider -->
-  <div class="section-divider">
-    <svg width="200" height="30" viewBox="0 0 300 40"><path d="M10 20 Q75 5, 150 20 T290 20" stroke="#D4AF37" stroke-width="1" fill="none" opacity="0.5"/><circle cx="150" cy="20" r="4" fill="#D4AF37" opacity="0.5"/><circle cx="60" cy="15" r="2" fill="#D4AF37" opacity="0.3"/><circle cx="240" cy="15" r="2" fill="#D4AF37" opacity="0.3"/></svg>
   </div>
 
-  <!-- SECTION: Profile -->
-  <section class="section-profile bg-alt">
-    <div class="container narrow text-center">
-      <h2 class="section-title">Putra Kami</h2>
-      <div class="profile-card">
-        <div class="corner-ornament top-left"></div>
-        <div class="corner-ornament top-right"></div>
-        <div class="corner-ornament bottom-left"></div>
-        <div class="corner-ornament bottom-right"></div>
-        <div class="profile-img-wrap">
-          <div class="profile-ring-gold"></div>
-          <img id="profile-photo" src="images/aldo.png" alt="Aldo" class="profile-img" loading="lazy" onerror="this.src='images/aldo.png'">
-        </div>
-        <h3 class="child-name" id="child-fullname-display">Andi Richardo Kaka</h3>
-        <span class="child-nick" id="child-nick-display">Panggilan: <strong>ALDO</strong></span>
-        <p class="child-order" id="child-order-display">Anak ke-2 dari 2 bersaudara</p>
-        <div class="family-box">
-          <p class="family-of">Putra dari:</p>
-          <p class="parents" id="parents-display">Bapak Andi Untung Selamet &amp; Ibu Yayah Rohaya</p>
-          <p class="sibling" id="sibling-display">Adik dari: <strong>Andi Shevchenko</strong></p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- MAIN CONTENT -->
+  <main id="main-content" class="content-hidden">
 
-  <!-- Divider -->
-  <div class="section-divider">
-    <svg width="200" height="30" viewBox="0 0 300 40"><path d="M10 20 Q75 5, 150 20 T290 20" stroke="#D4AF37" stroke-width="1" fill="none" opacity="0.5"/><circle cx="150" cy="20" r="4" fill="#D4AF37" opacity="0.5"/><circle cx="60" cy="15" r="2" fill="#D4AF37" opacity="0.3"/><circle cx="240" cy="15" r="2" fill="#D4AF37" opacity="0.3"/></svg>
-  </div>
-
-  <!-- SECTION: Event -->
-  <section class="section-event" id="event-section">
-    <div class="container narrow text-center">
-      <h2 class="section-title">Agenda Acara</h2>
-      <div class="countdown-box">
-        <p class="countdown-label">Menuju Hari Bahagia</p>
-        <div class="countdown-row">
-          <div class="cd-item"><span class="cd-num" id="cd-days">00</span><span class="cd-lbl">Hari</span></div>
-          <div class="cd-sep">:</div>
-          <div class="cd-item"><span class="cd-num" id="cd-hours">00</span><span class="cd-lbl">Jam</span></div>
-          <div class="cd-sep">:</div>
-          <div class="cd-item"><span class="cd-num" id="cd-minutes">00</span><span class="cd-lbl">Menit</span></div>
-          <div class="cd-sep">:</div>
-          <div class="cd-item"><span class="cd-num" id="cd-seconds">00</span><span class="cd-lbl">Detik</span></div>
+    <!-- SECTION: Opening -->
+    <section class="section-opening">
+      <div class="container narrow text-center">
+        <div class="opening-ornament">
+          <svg width="180" height="50" viewBox="0 0 300 60">
+            <path d="M10 30 Q75 10, 150 30 T290 30" stroke="#D4AF37" stroke-width="1.5" fill="none"
+              stroke-linecap="round" />
+            <circle cx="150" cy="30" r="4" fill="#D4AF37" />
+            <circle cx="80" cy="22" r="2.5" fill="#0F4C3A" />
+            <circle cx="220" cy="22" r="2.5" fill="#0F4C3A" />
+          </svg>
         </div>
-      </div>
-
-      <!-- Single Event Card: Resepsi Only -->
-      <div class="event-card-single">
-        <div class="corner-ornament top-left"></div>
-        <div class="corner-ornament top-right"></div>
-        <div class="corner-ornament bottom-left"></div>
-        <div class="corner-ornament bottom-right"></div>
-        <div class="event-badge">Syukuran Khitanan</div>
-        <div class="event-icon-wrap">
-          <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-        </div>
-        <h3 class="event-title">Resepsi Syukuran</h3>
-        <div class="event-rows">
-          <div class="event-row">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            <span id="event-date-display">Sabtu, 15 Agustus 2026</span>
-          </div>
-          <div class="event-row">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span id="event-time-display">Pukul 11.00 - 16.00 WIB</span>
-          </div>
-          <div class="event-row">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span class="venue-info"><strong id="event-venue-display">Ballroom Hotel Santika Jakarta</strong><br><span id="event-address-display">Jl. Hayam Wuruk No. 125, Jakarta Barat</span></span>
-          </div>
-        </div>
-        <a id="maps-link" href="https://maps.google.com/?q=Hotel+Santika+Hayam+Wuruk+Jakarta" target="_blank" rel="noopener" class="btn-maps">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
-          Buka di Google Maps
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION: RSVP -->
-  <section class="section-rsvp bg-alt">
-    <div class="container medium">
-      <h2 class="section-title text-center">Konfirmasi &amp; Doa Restu</h2>
-      <div class="rsvp-layout">
-        <div class="rsvp-form-card">
+        <p class="salam-text">Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+        <p class="opening-body">Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk
+          hadir dalam acara syukuran khitan putra kami:</p>
+        <div class="quote-card">
           <div class="corner-ornament top-left"></div>
           <div class="corner-ornament top-right"></div>
           <div class="corner-ornament bottom-left"></div>
           <div class="corner-ornament bottom-right"></div>
-          <form id="rsvp-form">
-            <div class="fg">
-              <label for="f-name">Nama Anda</label>
-              <input type="text" id="f-name" placeholder="Nama lengkap Anda" required>
+          <span class="quote-mark">"</span>
+          <p class="quote-body">Rabbana hablana min azwajina wa dzurriyyatina qurrata a'yun, waj'alna lil muttaqina
+            imama.</p>
+          <span class="quote-ref">QS. Al-Furqan: 74</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider">
+      <svg width="200" height="30" viewBox="0 0 300 40">
+        <path d="M10 20 Q75 5, 150 20 T290 20" stroke="#D4AF37" stroke-width="1" fill="none" opacity="0.5" />
+        <circle cx="150" cy="20" r="4" fill="#D4AF37" opacity="0.5" />
+        <circle cx="60" cy="15" r="2" fill="#D4AF37" opacity="0.3" />
+        <circle cx="240" cy="15" r="2" fill="#D4AF37" opacity="0.3" />
+      </svg>
+    </div>
+
+    <!-- SECTION: Profile -->
+    <section class="section-profile bg-alt">
+      <div class="container narrow text-center">
+        <h2 class="section-title">Putra Kami</h2>
+        <div class="profile-card">
+          <div class="corner-ornament top-left"></div>
+          <div class="corner-ornament top-right"></div>
+          <div class="corner-ornament bottom-left"></div>
+          <div class="corner-ornament bottom-right"></div>
+          <div class="profile-img-wrap">
+            <div class="profile-ring-gold"></div>
+            <img id="profile-photo" src="images/aldo.png" alt="Aldo" class="profile-img" loading="lazy"
+              onerror="this.src='images/aldo.png'">
+          </div>
+          <h3 class="child-name" id="child-fullname-display">Andi Richardo Kaka</h3>
+          <span class="child-nick" id="child-nick-display">Panggilan: <strong>ALDO</strong></span>
+          <p class="child-order" id="child-order-display">Anak ke-2 dari 2 bersaudara</p>
+          <div class="family-box">
+            <p class="family-of">Putra dari:</p>
+            <p class="parents" id="parents-display">Bapak Andi Untung Selamet &amp; Ibu Yayah Rohaya</p>
+            <p class="sibling" id="sibling-display">Adik dari: <strong>Andi Shevchenko</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider">
+      <svg width="200" height="30" viewBox="0 0 300 40">
+        <path d="M10 20 Q75 5, 150 20 T290 20" stroke="#D4AF37" stroke-width="1" fill="none" opacity="0.5" />
+        <circle cx="150" cy="20" r="4" fill="#D4AF37" opacity="0.5" />
+        <circle cx="60" cy="15" r="2" fill="#D4AF37" opacity="0.3" />
+        <circle cx="240" cy="15" r="2" fill="#D4AF37" opacity="0.3" />
+      </svg>
+    </div>
+
+    <!-- SECTION: Event -->
+    <section class="section-event" id="event-section">
+      <div class="container narrow text-center">
+        <h2 class="section-title">Agenda Acara</h2>
+        <div class="countdown-box">
+          <p class="countdown-label">Menuju Hari Bahagia</p>
+          <div class="countdown-row">
+            <div class="cd-item"><span class="cd-num" id="cd-days">00</span><span class="cd-lbl">Hari</span></div>
+            <div class="cd-sep">:</div>
+            <div class="cd-item"><span class="cd-num" id="cd-hours">00</span><span class="cd-lbl">Jam</span></div>
+            <div class="cd-sep">:</div>
+            <div class="cd-item"><span class="cd-num" id="cd-minutes">00</span><span class="cd-lbl">Menit</span></div>
+            <div class="cd-sep">:</div>
+            <div class="cd-item"><span class="cd-num" id="cd-seconds">00</span><span class="cd-lbl">Detik</span></div>
+          </div>
+        </div>
+
+        <!-- Single Event Card: Resepsi Only -->
+        <div class="event-card-single">
+          <div class="corner-ornament top-left"></div>
+          <div class="corner-ornament top-right"></div>
+          <div class="corner-ornament bottom-left"></div>
+          <div class="corner-ornament bottom-right"></div>
+          <div class="event-badge">Syukuran Khitanan</div>
+          <div class="event-icon-wrap">
+            <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3 class="event-title">Resepsi Syukuran</h3>
+          <div class="event-rows">
+            <div class="event-row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+              <span id="event-date-display">Sabtu, 15 Agustus 2026</span>
             </div>
-            <div class="fg">
-              <label>Kehadiran</label>
-              <div class="radio-row">
-                <label class="rl"><input type="radio" name="att" value="Hadir" checked><span class="rr"></span>Hadir</label>
-                <label class="rl"><input type="radio" name="att" value="Tidak Hadir"><span class="rr"></span>Berhalangan</label>
+            <div class="event-row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <span id="event-time-display">Pukul 11.00 - 16.00 WIB</span>
+            </div>
+            <div class="event-row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <span class="venue-info"><strong id="event-venue-display">Ballroom Hotel Santika Jakarta</strong><br><span
+                  id="event-address-display">Jl. Hayam Wuruk No. 125, Jakarta Barat</span></span>
+            </div>
+          </div>
+          <a id="maps-link" href="https://maps.google.com/?q=Hotel+Santika+Hayam+Wuruk+Jakarta" target="_blank"
+            rel="noopener" class="btn-maps">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21" />
+              <line x1="9" y1="3" x2="9" y2="18" />
+              <line x1="15" y1="6" x2="15" y2="21" />
+            </svg>
+            Buka di Google Maps
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: RSVP -->
+    <section class="section-rsvp bg-alt">
+      <div class="container medium">
+        <h2 class="section-title text-center">Konfirmasi &amp; Doa Restu</h2>
+        <div class="rsvp-layout">
+          <div class="rsvp-form-card">
+            <div class="corner-ornament top-left"></div>
+            <div class="corner-ornament top-right"></div>
+            <div class="corner-ornament bottom-left"></div>
+            <div class="corner-ornament bottom-right"></div>
+            <form id="rsvp-form">
+              <div class="fg">
+                <label for="f-name">Nama Anda</label>
+                <input type="text" id="f-name" placeholder="Nama lengkap Anda" required>
               </div>
-            </div>
-            <div class="fg" id="guests-fg">
-              <label for="f-guests">Jumlah Tamu</label>
-              <select id="f-guests">
-                <option value="1">1 Orang</option>
-                <option value="2">2 Orang</option>
-                <option value="3">3 Orang</option>
-                <option value="4">4+ Orang</option>
-              </select>
-            </div>
-            <div class="fg">
-              <label for="f-wish">Ucapan &amp; Doa Restu</label>
-              <textarea id="f-wish" rows="4" placeholder="Kirimkan doa terbaik untuk Aldo..." required></textarea>
-            </div>
-            <button type="submit" class="btn-submit">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              Kirim Konfirmasi
-            </button>
-          </form>
-        </div>
-        <div class="wishes-col">
-          <h3 class="wishes-heading">Doa &amp; Ucapan</h3>
-          <div id="wishes-feed" class="wishes-feed"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION: Digital Gift -->
-  <section class="section-gift">
-    <div class="container narrow text-center">
-      <h2 class="section-title">Kado Digital</h2>
-      <p class="gift-note">Bagi yang ingin memberikan tanda kasih, dapat mengirimkan melalui:</p>
-      <button id="gift-toggle" class="btn-gold-outline" onclick="toggleGift()">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-        Tampilkan Rekening &amp; Hadiah
-      </button>
-      <div id="gift-body" class="gift-body collapsed">
-        <div class="bank-card">
-          <div class="corner-ornament top-left"></div>
-          <div class="corner-ornament top-right"></div>
-          <div class="bank-name bca">BCA</div>
-          <p class="bank-num" id="bca-num">8720235619</p>
-          <p class="bank-holder" id="bca-holder">a/n Andi Untung Selamet</p>
-          <button class="btn-copy" onclick="copyEl('bca-num', this)">Salin Nomor</button>
-        </div>
-        <div class="bank-card">
-          <div class="corner-ornament top-left"></div>
-          <div class="corner-ornament top-right"></div>
-          <div class="bank-name mandiri">MANDIRI</div>
-          <p class="bank-num" id="mandiri-num">1230045678912</p>
-          <p class="bank-holder" id="mandiri-holder">a/n Yayah Rohaya</p>
-          <button class="btn-copy" onclick="copyEl('mandiri-num', this)">Salin Nomor</button>
-        </div>
-        <div class="bank-card addr-card">
-          <div class="corner-ornament top-left"></div>
-          <div class="corner-ornament top-right"></div>
-          <div class="bank-name addr">Pengiriman Kado</div>
-          <p class="bank-num addr-text" id="gift-addr">Jl. Kebon Jeruk No. 45, Jakarta Barat</p>
-          <button class="btn-copy" onclick="copyEl('gift-addr', this)">Salin Alamat</button>
+              <div class="fg">
+                <label>Kehadiran</label>
+                <div class="radio-row">
+                  <label class="rl"><input type="radio" name="att" value="Hadir" checked><span
+                      class="rr"></span>Hadir</label>
+                  <label class="rl"><input type="radio" name="att" value="Tidak Hadir"><span
+                      class="rr"></span>Berhalangan</label>
+                </div>
+              </div>
+              <div class="fg" id="guests-fg">
+                <label for="f-guests">Jumlah Tamu</label>
+                <select id="f-guests">
+                  <option value="1">1 Orang</option>
+                  <option value="2">2 Orang</option>
+                  <option value="3">3 Orang</option>
+                  <option value="4">4+ Orang</option>
+                </select>
+              </div>
+              <div class="fg">
+                <label for="f-wish">Ucapan &amp; Doa Restu</label>
+                <textarea id="f-wish" rows="4" placeholder="Kirimkan doa terbaik untuk Aldo..." required></textarea>
+              </div>
+              <button type="submit" class="btn-submit">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13" />
+                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                </svg>
+                Kirim Konfirmasi
+              </button>
+            </form>
+          </div>
+          <div class="wishes-col">
+            <h3 class="wishes-heading">Doa &amp; Ucapan</h3>
+            <div id="wishes-feed" class="wishes-feed"></div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container narrow text-center">
-      <svg width="36" height="36" viewBox="0 0 100 100" fill="none"><path d="M50 15L55 45L85 50L55 55L50 85L45 55L15 50L45 45L50 15Z" fill="#D4AF37"/></svg>
-      <p class="footer-closing">Merupakan kehormatan dan kebahagiaan kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
-      <p class="footer-salam">Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
-      <div class="footer-family">
-        <p class="fam-label">Keluarga Besar:</p>
-        <p class="fam-name" id="footer-family-display">Bapak Andi Untung Selamet &amp; Ibu Yayah Rohaya</p>
-        <p class="fam-kids" id="footer-kids-display">Andi Shevchenko &amp; Aldo</p>
-      </div>
-      <p class="footer-credit">Made with love using Antigravity ✦</p>
-    </div>
-  </footer>
-
-</main>
-
-<!-- TOAST -->
-<div id="toast-root"></div>
-
-<!-- ADMIN PANEL MODAL -->
-<div id="admin-overlay" class="admin-overlay hidden" onclick="closeAdminOutside(event)">
-  <div class="admin-modal">
-    <div class="admin-header">
-      <h3>⚙ Pengaturan Undangan</h3>
-      <button onclick="closeAdmin()" class="admin-close">✕</button>
-    </div>
-    <div class="admin-tabs">
-      <button class="atab active" onclick="switchTab('tab-child',this)">Anak &amp; Keluarga</button>
-      <button class="atab" onclick="switchTab('tab-event',this)">Acara</button>
-      <button class="atab" onclick="switchTab('tab-bank',this)">Rekening</button>
-      <button class="atab" onclick="switchTab('tab-photo',this)">Foto</button>
-      <button class="atab" onclick="switchTab('tab-guest',this)">Tamu</button>
-      <button class="atab" onclick="switchTab('tab-export',this)">📤 Ekspor</button>
-    </div>
-
-    <!-- Tab: Child -->
-    <div id="tab-child" class="admin-tab-content active">
-      <div class="ag"><label>Nama Lengkap</label><input id="a-fullname" type="text" placeholder="Andi Richardo Kaka"></div>
-      <div class="ag"><label>Panggilan / Nama Cover</label><input id="a-nick" type="text" placeholder="ALDO"></div>
-      <div class="ag"><label>Urutan Anak</label><input id="a-order" type="text" placeholder="Anak ke-2 dari 2 bersaudara"></div>
-      <div class="ag"><label>Nama Ayah</label><input id="a-father" type="text" placeholder="Andi Untung Selamet"></div>
-      <div class="ag"><label>Nama Ibu</label><input id="a-mother" type="text" placeholder="Yayah Rohaya"></div>
-      <div class="ag"><label>Nama Kakak</label><input id="a-sibling" type="text" placeholder="Andi Shevchenko"></div>
-    </div>
-
-    <!-- Tab: Event -->
-    <div id="tab-event" class="admin-tab-content">
-      <div class="ag"><label>Tanggal (ditampilkan)</label><input id="a-date-display" type="text" placeholder="Sabtu, 15 Agustus 2026"></div>
-      <div class="ag"><label>Tanggal (countdown ISO)</label><input id="a-date-iso" type="datetime-local"></div>
-      <div class="ag"><label>Waktu</label><input id="a-time" type="text" placeholder="Pukul 11.00 - 16.00 WIB"></div>
-      <div class="ag"><label>Nama Tempat</label><input id="a-venue" type="text" placeholder="Ballroom Hotel Santika Jakarta"></div>
-      <div class="ag"><label>Alamat Lengkap</label><input id="a-address" type="text" placeholder="Jl. Hayam Wuruk No. 125, Jakarta Barat"></div>
-      <div class="ag"><label>URL Google Maps / Nama Lokasi</label><input id="a-maps-url" type="text" placeholder="Masukkan nama lokasi langsung atau link maps lengkap"><small style="color:var(--muted);font-size:.75rem">Bisa berupa nama lokasi langsung (contoh: <b>Hotel Santika Hayam Wuruk Jakarta</b>), iframe embed, atau link maps lengkap. Hindari link pendek maps.app.goo.gl agar titik pin lokasi muncul sempurna.</small></div>
-      <div class="ag"><label>URL Musik Background (MP3 / langsung bisa diputar)</label><input id="a-music-url" type="text" placeholder="https://contoh.com/lagu.mp3"><small style="color:var(--muted);font-size:.75rem">Gunakan link MP3 yang bisa diakses langsung (direct link), bukan link YouTube/Spotify</small></div>
-    </div>
-
-    <!-- Tab: Bank -->
-    <div id="tab-bank" class="admin-tab-content">
-      <div class="ag"><label>No. Rekening BCA</label><input id="a-bca-num" type="text" placeholder="8720235619"></div>
-      <div class="ag"><label>Nama Pemilik BCA</label><input id="a-bca-holder" type="text" placeholder="a/n Andi Untung Selamet"></div>
-      <div class="ag"><label>No. Rekening Mandiri</label><input id="a-mandiri-num" type="text" placeholder="1230045678912"></div>
-      <div class="ag"><label>Nama Pemilik Mandiri</label><input id="a-mandiri-holder" type="text" placeholder="a/n Yayah Rohaya"></div>
-      <div class="ag"><label>Alamat Pengiriman Kado</label><input id="a-gift-addr" type="text" placeholder="Jl. Kebon Jeruk No. 45, Jakarta Barat"></div>
-    </div>
-
-    <!-- Tab: Photo -->
-    <div id="tab-photo" class="admin-tab-content">
-      <div class="ag"><label>Upload Foto Aldo</label><input id="a-photo-file" type="file" accept="image/*" onchange="handlePhotoUpload(event)"></div>
-      <div class="ag"><label>Atau masukkan URL Foto</label><input id="a-photo-url" type="text" placeholder="https://contoh.com/foto.jpg"></div>
-      <div class="photo-preview-wrap">
-        <img id="a-photo-preview" src="images/aldo.png" alt="Preview" class="photo-preview">
-      </div>
-    </div>
-
-    <!-- Tab: Guest Link Generator -->
-    <div id="tab-guest" class="admin-tab-content">
-      <p class="guest-desc">Masukkan nama tamu untuk membuat link undangan personal:</p>
-      <div class="ag"><label>Nama Tamu</label><input id="a-guest-name" type="text" placeholder="Contoh: Budi Santoso"></div>
-      <button class="btn-gen" onclick="generateGuestLink()">Generate Link</button>
-      <div id="guest-link-result" class="guest-link-result hidden">
-        <label>Link Undangan:</label>
-        <div class="link-row">
-          <input type="text" id="guest-link-output" readonly>
-          <button onclick="copyGuestLink()">Salin</button>
+    <!-- SECTION: Digital Gift -->
+    <section class="section-gift">
+      <div class="container narrow text-center">
+        <h2 class="section-title">Kado Digital</h2>
+        <p class="gift-note">Bagi yang ingin memberikan tanda kasih, dapat mengirimkan melalui:</p>
+        <button id="gift-toggle" class="btn-gold-outline" onclick="toggleGift()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+          Tampilkan Rekening &amp; Hadiah
+        </button>
+        <div id="gift-body" class="gift-body collapsed">
+          <div class="bank-card">
+            <div class="corner-ornament top-left"></div>
+            <div class="corner-ornament top-right"></div>
+            <div class="bank-name bca">BCA</div>
+            <p class="bank-num" id="bca-num">8720235619</p>
+            <p class="bank-holder" id="bca-holder">a/n Andi Untung Selamet</p>
+            <button class="btn-copy" onclick="copyEl('bca-num', this)">Salin Nomor</button>
+          </div>
+          <div class="bank-card">
+            <div class="corner-ornament top-left"></div>
+            <div class="corner-ornament top-right"></div>
+            <div class="bank-name mandiri">MANDIRI</div>
+            <p class="bank-num" id="mandiri-num">1230045678912</p>
+            <p class="bank-holder" id="mandiri-holder">a/n Yayah Rohaya</p>
+            <button class="btn-copy" onclick="copyEl('mandiri-num', this)">Salin Nomor</button>
+          </div>
+          <div class="bank-card addr-card">
+            <div class="corner-ornament top-left"></div>
+            <div class="corner-ornament top-right"></div>
+            <div class="bank-name addr">Pengiriman Kado</div>
+            <p class="bank-num addr-text" id="gift-addr">Jl. Kebon Jeruk No. 45, Jakarta Barat</p>
+            <button class="btn-copy" onclick="copyEl('gift-addr', this)">Salin Alamat</button>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Tab: Export Configuration -->
-    <div id="tab-export" class="admin-tab-content">
-      <p class="guest-desc" style="margin-bottom:1rem;">Simpan konfigurasi final ke source code agar terlihat oleh semua pengunjung:</p>
-      <button class="btn-gen" onclick="exportConfig()" style="margin-bottom: 1.5rem; background: var(--gold); color: var(--em3); font-weight:700;">📥 Download File main.js Baru</button>
-      
-      <div class="ag">
-        <label>Atau salin kode objek DEFAULT di bawah ini:</label>
-        <textarea id="export-code-output" rows="10" readonly style="font-family: monospace; font-size: 0.85rem; width: 100%; box-sizing: border-box; background: #fafafa; border: 1px solid rgba(15,76,58,0.12); border-radius: 8px; padding: 0.85rem; outline: none;"></textarea>
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container narrow text-center">
+        <svg width="36" height="36" viewBox="0 0 100 100" fill="none">
+          <path d="M50 15L55 45L85 50L55 55L50 85L45 55L15 50L45 45L50 15Z" fill="#D4AF37" />
+        </svg>
+        <p class="footer-closing">Merupakan kehormatan dan kebahagiaan kami apabila Bapak/Ibu/Saudara/i berkenan hadir
+          dan memberikan doa restu.</p>
+        <p class="footer-salam">Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
+        <div class="footer-family">
+          <p class="fam-label">Keluarga Besar:</p>
+          <p class="fam-name" id="footer-family-display">Bapak Andi Untung Selamet &amp; Ibu Yayah Rohaya</p>
+          <p class="fam-kids" id="footer-kids-display">Andi Shevchenko &amp; Aldo</p>
+        </div>
+        <p class="footer-credit">Made with love using Antigravity ✦</p>
       </div>
-      <button class="btn-gen" onclick="copyExportCode()" style="margin-top: 0.5rem;">📋 Salin Kode DEFAULT</button>
-      <small style="color:var(--muted);font-size:.78rem;display:block;margin-top:0.8rem;line-height:1.4;">
-        * Setelah men-download <b>main.js</b>, ganti file <code>main.js</code> lama di folder project Anda dengan file baru ini, lalu commit &amp; push ke GitHub agar otomatis terupdate di Vercel/GitHub Pages.
-      </small>
-    </div>
+    </footer>
 
-    <div class="admin-actions">
-      <button class="btn-save" onclick="saveAdminData()">💾 Simpan Perubahan</button>
-      <button class="btn-reset" onclick="resetAdminData()">↺ Reset ke Default</button>
+  </main>
+
+  <!-- TOAST -->
+  <div id="toast-root"></div>
+
+  <!-- ADMIN PANEL MODAL -->
+  <div id="admin-overlay" class="admin-overlay hidden" onclick="closeAdminOutside(event)">
+    <div class="admin-modal">
+      <div class="admin-header">
+        <h3>⚙ Pengaturan Undangan</h3>
+        <button onclick="closeAdmin()" class="admin-close">✕</button>
+      </div>
+      <div class="admin-tabs">
+        <button class="atab active" onclick="switchTab('tab-child',this)">Anak &amp; Keluarga</button>
+        <button class="atab" onclick="switchTab('tab-event',this)">Acara</button>
+        <button class="atab" onclick="switchTab('tab-bank',this)">Rekening</button>
+        <button class="atab" onclick="switchTab('tab-photo',this)">Foto</button>
+        <button class="atab" onclick="switchTab('tab-guest',this)">Tamu</button>
+        <button class="atab" onclick="switchTab('tab-export',this)">📤 Ekspor</button>
+      </div>
+
+      <!-- Tab: Child -->
+      <div id="tab-child" class="admin-tab-content active">
+        <div class="ag"><label>Nama Lengkap</label><input id="a-fullname" type="text" placeholder="Andi Richardo Kaka">
+        </div>
+        <div class="ag"><label>Panggilan / Nama Cover</label><input id="a-nick" type="text" placeholder="ALDO"></div>
+        <div class="ag"><label>Urutan Anak</label><input id="a-order" type="text"
+            placeholder="Anak ke-2 dari 2 bersaudara"></div>
+        <div class="ag"><label>Nama Ayah</label><input id="a-father" type="text" placeholder="Andi Untung Selamet">
+        </div>
+        <div class="ag"><label>Nama Ibu</label><input id="a-mother" type="text" placeholder="Yayah Rohaya"></div>
+        <div class="ag"><label>Nama Kakak</label><input id="a-sibling" type="text" placeholder="Andi Shevchenko"></div>
+      </div>
+
+      <!-- Tab: Event -->
+      <div id="tab-event" class="admin-tab-content">
+        <div class="ag"><label>Tanggal (ditampilkan)</label><input id="a-date-display" type="text"
+            placeholder="Sabtu, 15 Agustus 2026"></div>
+        <div class="ag"><label>Tanggal (countdown ISO)</label><input id="a-date-iso" type="datetime-local"></div>
+        <div class="ag"><label>Waktu</label><input id="a-time" type="text" placeholder="Pukul 11.00 - 16.00 WIB"></div>
+        <div class="ag"><label>Nama Tempat</label><input id="a-venue" type="text"
+            placeholder="Ballroom Hotel Santika Jakarta"></div>
+        <div class="ag"><label>Alamat Lengkap</label><input id="a-address" type="text"
+            placeholder="Jl. Hayam Wuruk No. 125, Jakarta Barat"></div>
+        <div class="ag"><label>URL Google Maps / Nama Lokasi</label><input id="a-maps-url" type="text"
+            placeholder="Masukkan nama lokasi langsung atau link maps lengkap"><small
+            style="color:var(--muted);font-size:.75rem">Bisa berupa nama lokasi langsung (contoh: <b>Hotel Santika Hayam
+              Wuruk Jakarta</b>), iframe embed, atau link maps lengkap. Hindari link pendek maps.app.goo.gl agar titik
+            pin lokasi muncul sempurna.</small></div>
+        <div class="ag"><label>URL Musik Background (MP3 / langsung bisa diputar)</label><input id="a-music-url"
+            type="text" placeholder="https://contoh.com/lagu.mp3"><small
+            style="color:var(--muted);font-size:.75rem">Gunakan link MP3 yang bisa diakses langsung (direct link), bukan
+            link YouTube/Spotify</small></div>
+      </div>
+
+      <!-- Tab: Bank -->
+      <div id="tab-bank" class="admin-tab-content">
+        <div class="ag"><label>No. Rekening BCA</label><input id="a-bca-num" type="text" placeholder="8720235619"></div>
+        <div class="ag"><label>Nama Pemilik BCA</label><input id="a-bca-holder" type="text"
+            placeholder="a/n Andi Untung Selamet"></div>
+        <div class="ag"><label>No. Rekening Mandiri</label><input id="a-mandiri-num" type="text"
+            placeholder="1230045678912"></div>
+        <div class="ag"><label>Nama Pemilik Mandiri</label><input id="a-mandiri-holder" type="text"
+            placeholder="a/n Yayah Rohaya"></div>
+        <div class="ag"><label>Alamat Pengiriman Kado</label><input id="a-gift-addr" type="text"
+            placeholder="Jl. Kebon Jeruk No. 45, Jakarta Barat"></div>
+      </div>
+
+      <!-- Tab: Photo -->
+      <div id="tab-photo" class="admin-tab-content">
+        <div class="ag"><label>Upload Foto Aldo</label><input id="a-photo-file" type="file" accept="image/*"
+            onchange="handlePhotoUpload(event)"></div>
+        <div class="ag"><label>Atau masukkan URL Foto</label><input id="a-photo-url" type="text"
+            placeholder="https://contoh.com/foto.jpg"></div>
+        <div class="photo-preview-wrap">
+          <img id="a-photo-preview" src="images/aldo.png" alt="Preview" class="photo-preview">
+        </div>
+      </div>
+
+      <!-- Tab: Guest Link Generator -->
+      <div id="tab-guest" class="admin-tab-content">
+        <p class="guest-desc">Masukkan nama tamu untuk membuat link undangan personal:</p>
+        <div class="ag"><label>Nama Tamu</label><input id="a-guest-name" type="text" placeholder="Contoh: Budi Santoso">
+        </div>
+        <button class="btn-gen" onclick="generateGuestLink()">Generate Link</button>
+        <div id="guest-link-result" class="guest-link-result hidden">
+          <label>Link Undangan:</label>
+          <div class="link-row">
+            <input type="text" id="guest-link-output" readonly>
+            <button onclick="copyGuestLink()">Salin</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab: Export Configuration -->
+      <div id="tab-export" class="admin-tab-content">
+        <p class="guest-desc" style="margin-bottom:1rem;">Simpan konfigurasi final ke source code agar terlihat oleh
+          semua pengunjung:</p>
+        <button class="btn-gen" onclick="exportConfig()"
+          style="margin-bottom: 1.5rem; background: var(--gold); color: var(--em3); font-weight:700;">📥 Download File
+          main.js Baru</button>
+
+        <div class="ag">
+          <label>Atau salin kode objek DEFAULT di bawah ini:</label>
+          <textarea id="export-code-output" rows="10" readonly
+            style="font-family: monospace; font-size: 0.85rem; width: 100%; box-sizing: border-box; background: #fafafa; border: 1px solid rgba(15,76,58,0.12); border-radius: 8px; padding: 0.85rem; outline: none;"></textarea>
+        </div>
+        <button class="btn-gen" onclick="copyExportCode()" style="margin-top: 0.5rem;">📋 Salin Kode DEFAULT</button>
+        <small style="color:var(--muted);font-size:.78rem;display:block;margin-top:0.8rem;line-height:1.4;">
+          * Setelah men-download <b>main.js</b>, ganti file <code>main.js</code> lama di folder project Anda dengan file
+          baru ini, lalu commit &amp; push ke GitHub agar otomatis terupdate di Vercel/GitHub Pages.
+        </small>
+      </div>
+
+      <div class="admin-actions">
+        <button class="btn-save" onclick="saveAdminData()">💾 Simpan Perubahan</button>
+        <button class="btn-reset" onclick="resetAdminData()">↺ Reset ke Default</button>
+      </div>
     </div>
   </div>
-</div>
 
-<script src="main.js"></script>
+  <script src="main.js"></script>
 </body>
+
 </html>
