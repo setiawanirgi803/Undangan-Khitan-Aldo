@@ -5,6 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Walimatul Khitan - Aldo</title>
     <meta name="description" content="Undangan Digital Resepsi Syukuran Khitan Andi Richardo Kaka (Aldo)">
+
+    <!-- Open Graph (OG) & Twitter Card Metadata -->
+    <meta property="og:title" content="Walimatul Khitan - Aldo">
+    <meta property="og:description" content="Undangan Digital Resepsi Syukuran Khitan Andi Richardo Kaka (Aldo)">
+    <meta property="og:image" content="images/og_cover.png">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <script>
+      (function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const guestName = urlParams.get('to');
+        const baseTitle = "Walimatul Khitan - Aldo";
+        const finalTitle = guestName ? baseTitle + " - Spesial untuk " + guestName : baseTitle;
+        
+        // Update Document Title
+        document.title = finalTitle;
+        
+        // Update Meta tags dynamically
+        const origin = window.location.origin || (window.location.protocol + "//" + window.location.host);
+        let path = window.location.pathname;
+        if (!path.endsWith('/')) {
+          const lastSlash = path.lastIndexOf('/');
+          path = lastSlash >= 0 ? path.substring(0, lastSlash + 1) : '/';
+        }
+        const absoluteImage = origin + path + 'images/og_cover.png';
+        const currentUrl = window.location.href;
+        
+        function setMeta(property, content, isName) {
+          const selector = isName ? 'meta[name="' + property + '"]' : 'meta[property="' + property + '"]';
+          let el = document.querySelector(selector);
+          if (!el) {
+            el = document.createElement('meta');
+            if (isName) el.setAttribute('name', property);
+            else el.setAttribute('property', property);
+            document.head.appendChild(el);
+          }
+          el.setAttribute('content', content);
+        }
+        
+        setMeta('og:title', finalTitle);
+        setMeta('og:url', currentUrl);
+        setMeta('og:image', absoluteImage);
+        setMeta('twitter:title', finalTitle, true);
+        setMeta('twitter:image', absoluteImage, true);
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
